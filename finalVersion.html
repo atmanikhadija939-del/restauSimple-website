@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison Véran — Gastronomie Marocaine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="finalVersion.css" />
+</head>
+<body>
+
+<!----------NAVBAR------------->
+<header id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showPage('accueil')">
+      <span class="logo-main">MAISON</span>
+      <span class="logo-sub">VÉRAN</span>
+    </div>
+    
+    <nav class="nav-links">
+      <button class="nav-link active" id="nav-accueil" onclick="showPage('accueil')" data-i18n="nav_home">Accueil</button>
+      <button class="nav-link" id="nav-menu" onclick="showPage('menu')" data-i18n="nav_menu">Menu</button>
+      <button class="nav-link" id="nav-contact" onclick="showPage('contact')" data-i18n="nav_contact">Contact</button>
+      <button class="btn-reserve" onclick="showPage('contact')" data-i18n="nav_reserve">Réserver</button>
+      
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="changeLanguage('fr')">FR</button>
+        <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="changeLanguage('ar')">AR</button>
+      </div>
+    </nav>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div id="mobile-nav">
+    <button class="mobile-link active" id="mob-accueil" onclick="showPage('accueil');closeMobile()" data-i18n="nav_home">Accueil</button>
+    <button class="mobile-link" id="mob-menu" onclick="showPage('menu');closeMobile()" data-i18n="nav_menu">Menu</button>
+    <button class="mobile-link" id="mob-contact" onclick="showPage('contact');closeMobile()" data-i18n="nav_contact">Contact</button>
+    <div class="mobile-lang-switcher">
+      <button class="lang-btn active" onclick="changeLanguage('fr')">FR</button>
+      <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+      <button class="lang-btn" onclick="changeLanguage('ar')">AR</button>
+    </div>
+  </div>
+</header>
+
+<!----------  PAGE — ACCUEIL ------------>
+<div id="page-accueil" class="page active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-img">
+     
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow fade-in delay-1" data-i18n="hero_eyebrow">Rabat · Depuis 1987</p>
+      <h1 class="hero-title-1 fade-in delay-2">MAISON</h1>
+      <h1 class="hero-title-2 text-gradient fade-in delay-2">VÉRAN</h1>
+      <div class="hero-divider fade-in delay-3"></div>
+      <p class="hero-tagline fade-in delay-3" data-i18n="hero_tagline">L'art de la table marocaine porté à sa plus haute expression</p>
+      <div class="hero-ctas fade-in delay-4">
+        <button class="btn-primary" onclick="showPage('contact')" data-i18n="hero_btn_reserve">Réserver une Table</button>
+        <button class="btn-outline" onclick="showPage('menu')" data-i18n="hero_btn_menu">Découvrir le Menu</button>
+      </div>
+    </div>
+    <div class="hero-scroll"><div class="hero-scroll-line"></div></div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="philosophy">
+    <div class="container">
+      <div class="philosophy-grid">
+        <div>
+          <p class="label" data-i18n="phil_label">Notre Philosophie</p>
+          <h2 class="phil-title" data-i18n="phil_title">La cuisine marocaine comme<br><span class="text-gradient">acte poétique</span></h2>
+          <div class="phil-divider"></div>
+          <p class="phil-text" data-i18n="phil_p1">Chez Maison Véran, chaque tajine raconte une histoire — celle des épices précieuses de la médina, des légumes gorgés de soleil et du savoir-faire hérité des générations passées.</p>
+          <p class="phil-text" data-i18n="phil_p2">Nous croyons que la gastronomie marocaine est un patrimoine vivant, réinventé avec délicatesse et raffinement tout en respectant l'authenticité des saveurs locales.</p>
+          <blockquote class="phil-quote" data-i18n="phil_quote">
+            "Je ne cherche pas la complexité pour elle-même. Je cherche l'émotion que provoque la perfection d'une saveur ancestrale."
+          </blockquote>
+          <p class="phil-author" data-i18n="phil_author">— Chef Édouard Véran</p>
+        </div>
+        <div class="phil-image-wrap">
+          <div class="phil-frame-1"></div>
+          <div class="phil-frame-2"></div>
+         
+         <img src="chef.jpeg" alt="chef"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Virtual Tour -->
+  <section class="virtual-tour">
+    <div class="container">
+      <div class="section-header">
+        <p class="label" data-i18n="tour_label">Visite Virtuelle</p>
+        <h2 class="section-title"><span data-i18n="tour_title_1">L'Atmosphère</span> <span class="text-gradient">Maison Véran</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="tour-grid">
+        <div class="tour-item">
+          <img src="x.jpg" alt="La Grande Salle Riad" />
+          <div class="tour-overlay">
+            <div class="tour-play"><span class="tour-play-icon">▶</span></div>
+            <p class="tour-name" data-i18n="tour_1_title">Le Grand Patio Riad</p>
+            <p class="tour-desc" data-i18n="tour_1_desc">80 couverts autour de la fontaine</p>
+          </div>
+        </div>
+        <div class="tour-item">
+          <img src="xx.jpg" alt="chambre privée" />
+          <div class="tour-overlay">
+            <div class="tour-play"><span class="tour-play-icon">▶</span></div>
+            <p class="tour-name" data-i18n="tour_2_title">Chambre privee</p>
+            <p class="tour-desc" data-i18n="tour_2_desc">Pour vos réceptions privées</p>
+          </div>
+        </div>
+        <div class="tour-item">
+          <img src="xxx.jpg" alt="Le Salon de Thé" />
+          <div class="tour-overlay">
+            <div class="tour-play"><span class="tour-play-icon">▶</span></div>
+            <p class="tour-name" data-i18n="tour_3_title">Le Salon de Thé</p>
+            <p class="tour-desc" data-i18n="tour_3_desc">Une sélection exclusive d'infusions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chef Feed -->
+  <section class="chef-feed">
+    <div class="container">
+      <div class="chef-feed-header">
+        <div>
+          <p class="label" data-i18n="chef_feed_label">En Direct des Cuisines</p>
+          <h2 class="section-title" style="font-size:1.9rem;" data-i18n="chef_feed_title">Le Comptoir du Chef</h2>
+        </div>
+        <p class="chef-feed-note" data-i18n="chef_feed_note">Chaque jour, nos équipes vous invitent dans les coulisses de nos préparations traditionnelles</p>
+      </div>
+      <div class="chef-grid">
+        <div class="chef-card">
+          <div class="chef-card-img">
+            <img src="preptaj.jpeg" alt="Préparation du tajine" />
+            <div class="chef-img-overlay"></div>
+            <div class="chef-live"><div class="live-dot"></div><span class="chef-time" data-i18n="chef_card_1_time">Il y a 2 heures</span></div>
+          </div>
+          <p class="chef-caption" data-i18n="chef_card_1_cap">Mijotage à feu doux du tajine d'agneau aux pruneaux</p>
+        </div>
+        <div class="chef-card">
+          <div class="chef-card-img">
+            <img src="prepas.jpeg" alt="Dressage de la Pastilla" />
+            <div class="chef-img-overlay"></div>
+            <div class="chef-live"><div class="live-dot"></div><span class="chef-time" data-i18n="chef_card_2_time">Il y a 4 heures</span></div>
+          </div>
+          <p class="chef-caption" data-i18n="chef_card_2_cap">Saupoudrage fin de la pastilla au poulet et amandes</p>
+        </div>
+        <div class="chef-card">
+          <div class="chef-card-img">
+            <img src="servte.jpeg" alt="Service du thé" />
+            <div class="chef-img-overlay"></div>
+            <div class="chef-live"><div class="live-dot"></div><span class="chef-time" data-i18n="chef_card_3_time">Il y a 6 heures</span></div>
+          </div>
+          <p class="chef-caption" data-i18n="chef_card_3_cap">Préparation du rituel du thé à la menthe fraîche</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats" style="background:var(--ink-soft); border-top:1px solid rgba(201,168,76,0.08);">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat"><p class="stat-value text-gradient">37</p><p class="stat-label" data-i18n="stat_1">Ans d'Excellence</p></div>
+        <div class="stat"><p class="stat-value text-gradient">100%</p><p class="stat-label" data-i18n="stat_2">Produits Frais &amp; Locaux</p></div>
+        <div class="stat"><p class="stat-value text-gradient">15+</p><p class="stat-label" data-i18n="stat_3">Recettes Ancestrales</p></div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-accueil -->
+
+<!----------PAGE — MENU------------>
+<div id="page-menu" class="page">
+
+  <div class="page-hero">
+    <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14e8?w=1400&h=400&fit=crop&auto=format" alt="Restaurant" />
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="label" style="margin-bottom:16px;" data-i18n="menu_hero_label">Gastronomie Marocaine</p>
+      <h1 class="page-title" data-i18n="menu_hero_title">Notre Menu</h1>
+      <div class="section-divider" style="margin-top:20px;"></div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top:48px; padding-bottom:80px;">
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" id="tab-plats" onclick="filterMenu('plats')"><span data-i18n="tab_plats">Plats</span><span class="tab-count">(4)</span></button>
+      <button class="tab-btn" id="tab-boissons" onclick="filterMenu('boissons')"><span data-i18n="tab_boissons">Boissons</span><span class="tab-count">(4)</span></button>
+      <button class="tab-btn" id="tab-desserts" onclick="filterMenu('desserts')"><span data-i18n="tab_desserts">Desserts</span><span class="tab-count">(3)</span></button>
+    </div>
+
+    <!-- Recommendation Tool -->
+    <div class="reco-tool">
+      <button class="reco-toggle" onclick="toggleReco()">
+        <div class="reco-toggle-left">
+          <div class="reco-icon">✦</div>
+          <div>
+            <p class="reco-title" data-i18n="reco_title">Vous ne savez pas quoi choisir ?</p>
+            <p class="reco-subtitle" data-i18n="reco_subtitle">Répondez à 3 questions pour une suggestion personnalisée</p>
+          </div>
+        </div>
+        <span class="reco-plus" id="reco-plus">+</span>
+      </button>
+      <div class="reco-body" id="reco-body">
+        <!-- Quiz filled by JS -->
+      </div>
+    </div>
+
+    <!-- Menu Cards Grid -->
+    <div class="menu-grid" id="menu-grid">
+      <!-- Filled by JS -->
+    </div>
+
+    <div class="menu-note">
+      <p data-i18n="menu_note">Notre menu évolue au fil des saisons et des arrivages du marché. Tous nos prix sont exprimés en Dirham Marocain (MAD), service compris.</p>
+      <div class="gold-dot-line dot-line"></div>
+    </div>
+  </div>
+
+</div><!-- /page-menu -->
+
+<!----------PAGE — CONTACT---------->
+<div id="page-contact" class="page">
+
+  <div class="page-hero">
+    
+    <img src="salla.jpg" alt="salle a manger"/>
+        <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="label" style="margin-bottom:16px;" data-i18n="contact_hero_label">Nous Rejoindre</p>
+      <h1 class="page-title" data-i18n="contact_hero_title">Contact & Réservation</h1>
+      <div class="section-divider" style="margin-top:20px;"></div>
+    </div>
+  </div>
+
+  <div class="container contact-layout">
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div class="info-col">
+        <p class="label" style="margin-bottom:24px;" data-i18n="info_title">Nous Trouver</p>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-icon">◈</span>
+            <div>
+              <p class="info-label" data-i18n="info_address_label">Adresse</p>
+              <p class="info-value" data-i18n="info_address_val">Avenue Mohammed V, Quartier Hassan&#10;Rabat, Maroc</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">◈</span>
+            <div>
+              <p class="info-label" data-i18n="info_phone_label">Téléphone</p>
+              <p class="info-value">+212 (0)5 37 00 11 22</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">◈</span>
+            <div>
+              <p class="info-label" data-i18n="info_email_label">Email</p>
+              <p class="info-value">reservation@maisonveran.ma</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">◈</span>
+            <div>
+              <p class="info-label" data-i18n="info_hours_label">Horaires</p>
+              <p class="info-value" data-i18n="info_hours_val">Mardi – Dimanche&#10;Déjeuner 12h00 – 15h30&#10;Dîner 19h00 – 23h00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-box">
+          <div class="map-grid"></div>
+          <div class="map-pin">
+            <div class="map-pin-diamond"></div>
+            <div class="map-pin-line"></div>
+            <p class="map-pin-addr">Avenue Mohammed V</p>
+            <p class="map-pin-city">Rabat, Maroc</p>
+          </div>
+          <span class="map-credit" data-i18n="map_credit">Carte interactive</span>
+        </div>
+
+        <div class="info-note" data-i18n="info_note">
+          Maison Véran dispose d'un service voiturier et d'un parking privé sécurisé. Accès PMR garanti.
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="form-section">
+        <p class="label" style="margin-bottom:32px;" data-i18n="form_title">Réservation en Ligne</p>
+
+        <div class="form-success" id="form-success">
+          <div class="success-icon">✦</div>
+          <h3 class="success-title" data-i18n="form_success_title">Demande Reçue</h3>
+          <p class="success-text" data-i18n="form_success_text">Notre équipe vous confirmera votre réservation dans les meilleurs délais. Nous nous réjouissons de vous accueillir chez Maison Véran.</p>
+          <button class="success-reset" onclick="resetForm()" data-i18n="form_success_btn">← Nouvelle Réservation</button>
+        </div>
+
+        <form id="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-grid">
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" data-i18n="form_name">Nom & Prénom *</label>
+              <input class="form-input" type="text" id="input-name" placeholder="Youssef Alami" required />
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" data-i18n="form_email">Adresse Email *</label>
+              <input class="form-input" type="email" id="input-email" placeholder="youssef@exemple.ma" required />
+            </div>
+          </div>
+          <div class="form-grid" style="margin-top:20px;">
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" data-i18n="form_date">Date Souhaitée *</label>
+              <input class="form-input" type="date" required />
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" data-i18n="form_guests">Nombre de Couverts *</label>
+              <select class="form-select" id="select-guests">
+                <!-- Populated dynamically via JS translations -->
+              </select>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:20px;">
+            <label class="form-label" data-i18n="form_occasion">Occasion Spéciale</label>
+            <select class="form-select" id="select-occasion">
+              <!-- Populated dynamically via JS translations -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_msg">Message & Demandes Particulières</label>
+            <textarea class="form-textarea" rows="4" id="input-msg" placeholder="Allergies, préférences de table..."></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-primary form-submit" data-i18n="form_submit">Envoyer la Demande</button>
+          </div>
+          <p class="form-hint" data-i18n="form_hint">Confirmation par email sous 24h. Urgence : +212 (0)5 37 00 11 22</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /page-contact -->
+
+<!----------FOOTER---------->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo-main">MAISON</p>
+        <p class="footer-logo-sub">VÉRAN</p>
+        <p class="footer-tagline" data-i18n="footer_tagline">Haute Gastronomie Marocaine.<br>Une expérience sensorielle unique à Rabat.</p>
+      </div>
+      <div>
+        <p class="footer-col-label" data-i18n="footer_nav_label">Navigation</p>
+        <button class="footer-nav-link" onclick="showPage('accueil')" data-i18n="nav_home">Accueil</button>
+        <button class="footer-nav-link" onclick="showPage('menu')" data-i18n="nav_menu">Menu</button>
+        <button class="footer-nav-link" onclick="showPage('contact')" data-i18n="nav_contact">Contact</button>
+      </div>
+      <div>
+        <p class="footer-col-label" data-i18n="footer_hours_label">Horaires</p>
+        <p class="footer-hours" data-i18n="footer_hours_val">Mardi – Dimanche<br>Déjeuner 12h00 – 15h30<br>Dîner 19h00 – 23h00</p>
+        <p class="footer-closed" data-i18n="footer_closed">Fermé le Lundi</p>
+      </div>
+    </div>
+    <div class="gold-dot-line" style="margin-bottom:24px;"></div>
+    <div class="footer-bottom">
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 Maison Véran. Tous droits réservés.</p>
+      <p class="footer-addr" data-i18n="footer_addr">Avenue Mohammed V, Quartier Hassan, Rabat, Maroc</p>
+    </div>
+  </div>
+</footer>
+
+<script src="finalVersion.js"></script>
+</body>
+</html>
